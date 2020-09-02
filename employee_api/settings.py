@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken', # the prebuilt tokenauth of drf
     'api', # the api application 
     'employee', # the core application
+    'corsheaders', # allowing cross origin requests
 ]
 
 
@@ -63,8 +64,11 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'employee_api.middleware.cors_middleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
+
+CORS_ORIGIN_ALLOW_ALL = True
 
 ROOT_URLCONF = 'employee_api.urls'
 

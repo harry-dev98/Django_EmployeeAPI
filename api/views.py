@@ -76,7 +76,6 @@ def employee(request, pk):
         else:
             # deleting data
             emp.delete()
-
             return Response(
                 {
                     'message' : 'Employee with pk = {} deleted.'.format(pk)
